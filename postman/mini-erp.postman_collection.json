@@ -1,0 +1,33 @@
+{
+  "info": {
+    "name": "Mini ERP CRM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key":"baseUrl","value":"http://localhost:5000/api"},
+    {"key":"token","value":""}
+  ],
+  "item": [
+    {
+      "name":"Login",
+      "request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],
+      "body":{"mode":"raw","raw":"{\"email\":\"admin@example.com\",\"password\":\"Password123\"}"},
+      "url":{"raw":"{{baseUrl}}/auth/login","host":["{{baseUrl}}"],"path":["auth","login"]}}
+    },
+    {
+      "name":"Customers",
+      "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],
+      "url":{"raw":"{{baseUrl}}/customers","host":["{{baseUrl}}"],"path":["customers"]}}
+    },
+    {
+      "name":"Products",
+      "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],
+      "url":{"raw":"{{baseUrl}}/products","host":["{{baseUrl}}"],"path":["products"]}}
+    },
+    {
+      "name":"Challans",
+      "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],
+      "url":{"raw":"{{baseUrl}}/challans","host":["{{baseUrl}}"],"path":["challans"]}}
+    }
+  ]
+}
