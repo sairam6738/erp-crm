@@ -3,7 +3,7 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { query } from "../db";
-
+const secret = process.env.JWT_SECRET;
 const router = Router();
 
 const loginSchema = z.object({
